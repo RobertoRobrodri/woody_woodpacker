@@ -6,7 +6,9 @@ CYAN = @echo "\033[0;36m"
 RESET = "\033[1;0m"
 
 # RESOURCES #
-SRCS =	srcs/main.c
+SRCS =	srcs/main.c \
+		srcs/elf.c \
+		srcs/debug.c
 
 # FLAGS #
 OBJS_DIR = objets

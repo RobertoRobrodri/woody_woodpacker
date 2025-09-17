@@ -1,0 +1,1307 @@
+FILE TYPE CLASS 64
+woody_woodpacker: Executable file
+File type 2
+Extraemos las cosas
+Symbol
+name->.note.gnu.build-id
+section name->.note.gnu.build-id
+sh_name->0
+Type determined         [r]
+Type by special section [?]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 1
+Section type: SHT_NOTE
+Section flags: SHF_ALLOC 
+st_size: 0
+st_value: 4194928
+-----------------------------------------------------------------------------------
+Symbol
+name->.interp
+section name->.interp
+sh_name->0
+Type determined         [r]
+Type by special section [?]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 2
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC 
+st_size: 0
+st_value: 4194964
+-----------------------------------------------------------------------------------
+Symbol
+name->.gnu.hash
+section name->.gnu.hash
+sh_name->0
+Type determined         [?]
+Type by special section [?]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 3
+Section type: UNKNOWN
+Section flags: SHF_ALLOC 
+st_size: 0
+st_value: 4194992
+-----------------------------------------------------------------------------------
+Symbol
+name->.dynsym
+section name->.dynsym
+sh_name->0
+Type determined         [?]
+Type by special section [?]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 4
+Section type: SHT_DYNSYM
+Section flags: SHF_ALLOC 
+st_size: 0
+st_value: 4195024
+-----------------------------------------------------------------------------------
+Symbol
+name->.dynstr
+section name->.dynstr
+sh_name->0
+Type determined         [?]
+Type by special section [?]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 5
+Section type: SHT_STRTAB
+Section flags: SHF_ALLOC 
+st_size: 0
+st_value: 4195192
+-----------------------------------------------------------------------------------
+Symbol
+name->.gnu.version
+section name->.gnu.version
+sh_name->0
+Type determined         [?]
+Type by special section [?]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 6
+Section type: SHT_GNU_versym
+Section flags: SHF_ALLOC 
+st_size: 0
+st_value: 4195324
+-----------------------------------------------------------------------------------
+Symbol
+name->.gnu.version_r
+section name->.gnu.version_r
+sh_name->0
+Type determined         [?]
+Type by special section [?]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 7
+Section type: SHT_GNU_verneed
+Section flags: SHF_ALLOC 
+st_size: 0
+st_value: 4195344
+-----------------------------------------------------------------------------------
+Symbol
+name->.rela.dyn
+section name->.rela.dyn
+sh_name->0
+Type determined         [?]
+Type by special section [?]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 8
+Section type: SHT_RELA
+Section flags: SHF_ALLOC 
+st_size: 0
+st_value: 4195392
+-----------------------------------------------------------------------------------
+Symbol
+name->.rela.plt
+section name->.rela.plt
+sh_name->0
+Type determined         [?]
+Type by special section [?]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 9
+Section type: SHT_RELA
+Section flags: SHF_ALLOC SHF_INFO_LINK 
+st_size: 0
+st_value: 4195464
+-----------------------------------------------------------------------------------
+Symbol
+name->.init
+section name->.init
+sh_name->0
+Type determined         [t]
+Type by special section [?]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 10
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC SHF_EXECINSTR 
+st_size: 0
+st_value: 4195560
+-----------------------------------------------------------------------------------
+Symbol
+name->.plt
+section name->.plt
+sh_name->0
+Type determined         [t]
+Type by special section [?]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 11
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC SHF_EXECINSTR 
+st_size: 0
+st_value: 4195600
+-----------------------------------------------------------------------------------
+Symbol
+name->.text
+section name->.text
+sh_name->0
+Type determined         [t]
+Type by special section [t]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 12
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC SHF_EXECINSTR 
+st_size: 0
+st_value: 4195712
+-----------------------------------------------------------------------------------
+Symbol
+name->.fini
+section name->.fini
+sh_name->0
+Type determined         [t]
+Type by special section [?]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 13
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC SHF_EXECINSTR 
+st_size: 0
+st_value: 4196044
+-----------------------------------------------------------------------------------
+Symbol
+name->.rodata
+section name->.rodata
+sh_name->0
+Type determined         [r]
+Type by special section [r]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 14
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC 
+st_size: 0
+st_value: 4196072
+-----------------------------------------------------------------------------------
+Symbol
+name->.eh_frame_hdr
+section name->.eh_frame_hdr
+sh_name->0
+Type determined         [r]
+Type by special section [?]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 15
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC 
+st_size: 0
+st_value: 4196100
+-----------------------------------------------------------------------------------
+Symbol
+name->.eh_frame
+section name->.eh_frame
+sh_name->0
+Type determined         [r]
+Type by special section [?]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 16
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC 
+st_size: 0
+st_value: 4196168
+-----------------------------------------------------------------------------------
+Symbol
+name->.note.ABI-tag
+section name->.note.ABI-tag
+sh_name->0
+Type determined         [r]
+Type by special section [?]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 17
+Section type: SHT_NOTE
+Section flags: SHF_ALLOC 
+st_size: 0
+st_value: 4196388
+-----------------------------------------------------------------------------------
+Symbol
+name->.init_array
+section name->.init_array
+sh_name->0
+Type determined         [d]
+Type by special section [d]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 18
+Section type: SHT_INIT_ARRAY
+Section flags: SHF_WRITE SHF_ALLOC 
+st_size: 0
+st_value: 4324840
+-----------------------------------------------------------------------------------
+Symbol
+name->.fini_array
+section name->.fini_array
+sh_name->0
+Type determined         [d]
+Type by special section [d]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 19
+Section type: SHT_FINI_ARRAY
+Section flags: SHF_WRITE SHF_ALLOC 
+st_size: 0
+st_value: 4324848
+-----------------------------------------------------------------------------------
+Symbol
+name->.dynamic
+section name->.dynamic
+sh_name->0
+Type determined         [d]
+Type by special section [d]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 20
+Section type: SHT_DYNAMIC
+Section flags: SHF_WRITE SHF_ALLOC 
+st_size: 0
+st_value: 4324856
+-----------------------------------------------------------------------------------
+Symbol
+name->.got
+section name->.got
+sh_name->0
+Type determined         [d]
+Type by special section [d]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 21
+Section type: SHT_PROGBITS
+Section flags: SHF_WRITE SHF_ALLOC 
+st_size: 0
+st_value: 4325320
+-----------------------------------------------------------------------------------
+Symbol
+name->.got.plt
+section name->.got.plt
+sh_name->0
+Type determined         [d]
+Type by special section [?]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 22
+Section type: SHT_PROGBITS
+Section flags: SHF_WRITE SHF_ALLOC 
+st_size: 0
+st_value: 4325352
+-----------------------------------------------------------------------------------
+Symbol
+name->.data
+section name->.data
+sh_name->0
+Type determined         [d]
+Type by special section [d]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 23
+Section type: SHT_PROGBITS
+Section flags: SHF_WRITE SHF_ALLOC 
+st_size: 0
+st_value: 4325408
+-----------------------------------------------------------------------------------
+Symbol
+name->.bss
+section name->.bss
+sh_name->0
+Type determined         [b]
+Type by special section [b]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 24
+Section type: SHT_NOBITS
+Section flags: SHF_WRITE SHF_ALLOC 
+st_size: 0
+st_value: 4325412
+-----------------------------------------------------------------------------------
+Symbol
+name->.comment
+section name->.comment
+sh_name->0
+Type determined         [?]
+Type by special section [?]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 25
+Section type: SHT_PROGBITS
+Section flags: SHF_MERGE SHF_STRINGS 
+st_size: 0
+st_value: 0
+-----------------------------------------------------------------------------------
+Symbol
+name->.annobin.notes
+section name->.annobin.notes
+sh_name->0
+Type determined         [?]
+Type by special section [?]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 26
+Section type: SHT_PROGBITS
+Section flags: SHF_MERGE SHF_STRINGS 
+st_size: 0
+st_value: 0
+-----------------------------------------------------------------------------------
+Symbol
+name->.gnu.build.attributes
+section name->.gnu.build.attributes
+sh_name->0
+Type determined         [r]
+Type by special section [?]
+sh_type: STT_SECTION (3)
+sh_bind: STB_LOCAL (0)
+st_shndx: 27
+Section type: SHT_NOTE
+Section flags: 
+st_size: 0
+st_value: 4325416
+-----------------------------------------------------------------------------------
+Symbol
+name->crt1.o
+section name- NONE
+sh_name->1
+Type determined         [a]
+Type by special section [?]
+sh_type: STT_FILE (4)
+sh_bind: STB_LOCAL (0)
+st_shndx: 65521
+Section type: ABSOLUTE
+Section flags: NONE
+st_size: 0
+st_value: 0
+-----------------------------------------------------------------------------------
+Symbol
+name->$x
+section name->.text
+sh_name->8
+Type determined         [t]
+Type by special section [t]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_LOCAL (0)
+st_shndx: 12
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC SHF_EXECINSTR 
+st_size: 0
+st_value: 4195712
+-----------------------------------------------------------------------------------
+Symbol
+name->__wrap_main
+section name->.text
+sh_name->11
+Type determined         [t]
+Type by special section [t]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_LOCAL (0)
+st_shndx: 12
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC SHF_EXECINSTR 
+st_size: 0
+st_value: 4195764
+-----------------------------------------------------------------------------------
+Symbol
+name->$d
+section name->.eh_frame
+sh_name->23
+Type determined         [r]
+Type by special section [?]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_LOCAL (0)
+st_shndx: 16
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC 
+st_size: 0
+st_value: 4196188
+-----------------------------------------------------------------------------------
+Symbol
+name->$d
+section name->.note.ABI-tag
+sh_name->23
+Type determined         [r]
+Type by special section [?]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_LOCAL (0)
+st_shndx: 17
+Section type: SHT_NOTE
+Section flags: SHF_ALLOC 
+st_size: 0
+st_value: 4196388
+-----------------------------------------------------------------------------------
+Symbol
+name->__abi_tag
+section name->.note.ABI-tag
+sh_name->26
+Type determined         [r]
+Type by special section [?]
+sh_type: STT_OBJECT (1)
+sh_bind: STB_LOCAL (0)
+st_shndx: 17
+Section type: SHT_NOTE
+Section flags: SHF_ALLOC 
+st_size: 32
+st_value: 4196388
+-----------------------------------------------------------------------------------
+Symbol
+name->$d
+section name->.rodata
+sh_name->23
+Type determined         [r]
+Type by special section [r]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_LOCAL (0)
+st_shndx: 14
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC 
+st_size: 0
+st_value: 4196072
+-----------------------------------------------------------------------------------
+Symbol
+name->$x
+section name->.text
+sh_name->8
+Type determined         [t]
+Type by special section [t]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_LOCAL (0)
+st_shndx: 12
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC SHF_EXECINSTR 
+st_size: 0
+st_value: 4195776
+-----------------------------------------------------------------------------------
+Symbol
+name->$d
+section name->.eh_frame
+sh_name->23
+Type determined         [r]
+Type by special section [?]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_LOCAL (0)
+st_shndx: 16
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC 
+st_size: 0
+st_value: 4196208
+-----------------------------------------------------------------------------------
+Symbol
+name->crti.o
+section name- NONE
+sh_name->36
+Type determined         [a]
+Type by special section [?]
+sh_type: STT_FILE (4)
+sh_bind: STB_LOCAL (0)
+st_shndx: 65521
+Section type: ABSOLUTE
+Section flags: NONE
+st_size: 0
+st_value: 0
+-----------------------------------------------------------------------------------
+Symbol
+name->$x
+section name->.text
+sh_name->8
+Type determined         [t]
+Type by special section [t]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_LOCAL (0)
+st_shndx: 12
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC SHF_EXECINSTR 
+st_size: 0
+st_value: 4195800
+-----------------------------------------------------------------------------------
+Symbol
+name->call_weak_fn
+section name->.text
+sh_name->43
+Type determined         [t]
+Type by special section [t]
+sh_type: STT_FUNC (2)
+sh_bind: STB_LOCAL (0)
+st_shndx: 12
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC SHF_EXECINSTR 
+st_size: 20
+st_value: 4195800
+-----------------------------------------------------------------------------------
+Symbol
+name->$x
+section name->.init
+sh_name->8
+Type determined         [t]
+Type by special section [?]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_LOCAL (0)
+st_shndx: 10
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC SHF_EXECINSTR 
+st_size: 0
+st_value: 4195560
+-----------------------------------------------------------------------------------
+Symbol
+name->$x
+section name->.fini
+sh_name->8
+Type determined         [t]
+Type by special section [?]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_LOCAL (0)
+st_shndx: 13
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC SHF_EXECINSTR 
+st_size: 0
+st_value: 4196044
+-----------------------------------------------------------------------------------
+Symbol
+name->crtn.o
+section name- NONE
+sh_name->56
+Type determined         [a]
+Type by special section [?]
+sh_type: STT_FILE (4)
+sh_bind: STB_LOCAL (0)
+st_shndx: 65521
+Section type: ABSOLUTE
+Section flags: NONE
+st_size: 0
+st_value: 0
+-----------------------------------------------------------------------------------
+Symbol
+name->$x
+section name->.init
+sh_name->8
+Type determined         [t]
+Type by special section [?]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_LOCAL (0)
+st_shndx: 10
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC SHF_EXECINSTR 
+st_size: 0
+st_value: 4195576
+-----------------------------------------------------------------------------------
+Symbol
+name->$x
+section name->.fini
+sh_name->8
+Type determined         [t]
+Type by special section [?]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_LOCAL (0)
+st_shndx: 13
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC SHF_EXECINSTR 
+st_size: 0
+st_value: 4196056
+-----------------------------------------------------------------------------------
+Symbol
+name->crtbegin.o
+section name- NONE
+sh_name->63
+Type determined         [a]
+Type by special section [?]
+sh_type: STT_FILE (4)
+sh_bind: STB_LOCAL (0)
+st_shndx: 65521
+Section type: ABSOLUTE
+Section flags: NONE
+st_size: 0
+st_value: 0
+-----------------------------------------------------------------------------------
+Symbol
+name->$x
+section name->.text
+sh_name->8
+Type determined         [t]
+Type by special section [t]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_LOCAL (0)
+st_shndx: 12
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC SHF_EXECINSTR 
+st_size: 0
+st_value: 4195840
+-----------------------------------------------------------------------------------
+Symbol
+name->deregister_tm_clones
+section name->.text
+sh_name->74
+Type determined         [t]
+Type by special section [t]
+sh_type: STT_FUNC (2)
+sh_bind: STB_LOCAL (0)
+st_shndx: 12
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC SHF_EXECINSTR 
+st_size: 0
+st_value: 4195840
+-----------------------------------------------------------------------------------
+Symbol
+name->register_tm_clones
+section name->.text
+sh_name->76
+Type determined         [t]
+Type by special section [t]
+sh_type: STT_FUNC (2)
+sh_bind: STB_LOCAL (0)
+st_shndx: 12
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC SHF_EXECINSTR 
+st_size: 0
+st_value: 4195888
+-----------------------------------------------------------------------------------
+Symbol
+name->$d
+section name->.rodata
+sh_name->23
+Type determined         [r]
+Type by special section [r]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_LOCAL (0)
+st_shndx: 14
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC 
+st_size: 0
+st_value: 4196080
+-----------------------------------------------------------------------------------
+Symbol
+name->__do_global_dtors_aux
+section name->.text
+sh_name->95
+Type determined         [t]
+Type by special section [t]
+sh_type: STT_FUNC (2)
+sh_bind: STB_LOCAL (0)
+st_shndx: 12
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC SHF_EXECINSTR 
+st_size: 0
+st_value: 4195948
+-----------------------------------------------------------------------------------
+Symbol
+name->completed.0
+section name->.bss
+sh_name->117
+Type determined         [b]
+Type by special section [b]
+sh_type: STT_OBJECT (1)
+sh_bind: STB_LOCAL (0)
+st_shndx: 24
+Section type: SHT_NOBITS
+Section flags: SHF_WRITE SHF_ALLOC 
+st_size: 1
+st_value: 4325412
+-----------------------------------------------------------------------------------
+Symbol
+name->$d
+section name->.fini_array
+sh_name->23
+Type determined         [d]
+Type by special section [d]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_LOCAL (0)
+st_shndx: 19
+Section type: SHT_FINI_ARRAY
+Section flags: SHF_WRITE SHF_ALLOC 
+st_size: 0
+st_value: 4324848
+-----------------------------------------------------------------------------------
+Symbol
+name->__do_global_dtors_aux_fini_array_entry
+section name->.fini_array
+sh_name->129
+Type determined         [d]
+Type by special section [d]
+sh_type: STT_OBJECT (1)
+sh_bind: STB_LOCAL (0)
+st_shndx: 19
+Section type: SHT_FINI_ARRAY
+Section flags: SHF_WRITE SHF_ALLOC 
+st_size: 0
+st_value: 4324848
+-----------------------------------------------------------------------------------
+Symbol
+name->frame_dummy
+section name->.text
+sh_name->168
+Type determined         [t]
+Type by special section [t]
+sh_type: STT_FUNC (2)
+sh_bind: STB_LOCAL (0)
+st_shndx: 12
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC SHF_EXECINSTR 
+st_size: 0
+st_value: 4196004
+-----------------------------------------------------------------------------------
+Symbol
+name->$d
+section name->.init_array
+sh_name->23
+Type determined         [d]
+Type by special section [d]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_LOCAL (0)
+st_shndx: 18
+Section type: SHT_INIT_ARRAY
+Section flags: SHF_WRITE SHF_ALLOC 
+st_size: 0
+st_value: 4324840
+-----------------------------------------------------------------------------------
+Symbol
+name->__frame_dummy_init_array_entry
+section name->.init_array
+sh_name->180
+Type determined         [d]
+Type by special section [d]
+sh_type: STT_OBJECT (1)
+sh_bind: STB_LOCAL (0)
+st_shndx: 18
+Section type: SHT_INIT_ARRAY
+Section flags: SHF_WRITE SHF_ALLOC 
+st_size: 0
+st_value: 4324840
+-----------------------------------------------------------------------------------
+Symbol
+name->$d
+section name->.eh_frame
+sh_name->23
+Type determined         [r]
+Type by special section [?]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_LOCAL (0)
+st_shndx: 16
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC 
+st_size: 0
+st_value: 4196248
+-----------------------------------------------------------------------------------
+Symbol
+name->$d
+section name->.bss
+sh_name->23
+Type determined         [b]
+Type by special section [b]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_LOCAL (0)
+st_shndx: 24
+Section type: SHT_NOBITS
+Section flags: SHF_WRITE SHF_ALLOC 
+st_size: 0
+st_value: 4325412
+-----------------------------------------------------------------------------------
+Symbol
+name->main.c
+section name- NONE
+sh_name->211
+Type determined         [a]
+Type by special section [?]
+sh_type: STT_FILE (4)
+sh_bind: STB_LOCAL (0)
+st_shndx: 65521
+Section type: ABSOLUTE
+Section flags: NONE
+st_size: 0
+st_value: 0
+-----------------------------------------------------------------------------------
+Symbol
+name->$d
+section name->.rodata
+sh_name->23
+Type determined         [r]
+Type by special section [r]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_LOCAL (0)
+st_shndx: 14
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC 
+st_size: 0
+st_value: 4196088
+-----------------------------------------------------------------------------------
+Symbol
+name->$x
+section name->.text
+sh_name->8
+Type determined         [t]
+Type by special section [t]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_LOCAL (0)
+st_shndx: 12
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC SHF_EXECINSTR 
+st_size: 0
+st_value: 4196012
+-----------------------------------------------------------------------------------
+Symbol
+name->$d
+section name->.eh_frame
+sh_name->23
+Type determined         [r]
+Type by special section [?]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_LOCAL (0)
+st_shndx: 16
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC 
+st_size: 0
+st_value: 4196352
+-----------------------------------------------------------------------------------
+Symbol
+name->crtend.o
+section name- NONE
+sh_name->218
+Type determined         [a]
+Type by special section [?]
+sh_type: STT_FILE (4)
+sh_bind: STB_LOCAL (0)
+st_shndx: 65521
+Section type: ABSOLUTE
+Section flags: NONE
+st_size: 0
+st_value: 0
+-----------------------------------------------------------------------------------
+Symbol
+name->$d
+section name->.eh_frame
+sh_name->23
+Type determined         [r]
+Type by special section [?]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_LOCAL (0)
+st_shndx: 16
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC 
+st_size: 0
+st_value: 4196384
+-----------------------------------------------------------------------------------
+Symbol
+name->__FRAME_END__
+section name->.eh_frame
+sh_name->227
+Type determined         [r]
+Type by special section [?]
+sh_type: STT_OBJECT (1)
+sh_bind: STB_LOCAL (0)
+st_shndx: 16
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC 
+st_size: 0
+st_value: 4196384
+-----------------------------------------------------------------------------------
+Symbol
+name->
+section name- NONE
+sh_name->0
+Type determined         [a]
+Type by special section [?]
+sh_type: STT_FILE (4)
+sh_bind: STB_LOCAL (0)
+st_shndx: 65521
+Section type: ABSOLUTE
+Section flags: NONE
+st_size: 0
+st_value: 0
+-----------------------------------------------------------------------------------
+Symbol
+name->_DYNAMIC
+section name->.dynamic
+sh_name->241
+Type determined         [d]
+Type by special section [d]
+sh_type: STT_OBJECT (1)
+sh_bind: STB_LOCAL (0)
+st_shndx: 20
+Section type: SHT_DYNAMIC
+Section flags: SHF_WRITE SHF_ALLOC 
+st_size: 0
+st_value: 4324856
+-----------------------------------------------------------------------------------
+Symbol
+name->__GNU_EH_FRAME_HDR
+section name->.eh_frame_hdr
+sh_name->250
+Type determined         [r]
+Type by special section [?]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_LOCAL (0)
+st_shndx: 15
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC 
+st_size: 0
+st_value: 4196100
+-----------------------------------------------------------------------------------
+Symbol
+name->_GLOBAL_OFFSET_TABLE_
+section name->.got
+sh_name->269
+Type determined         [d]
+Type by special section [d]
+sh_type: STT_OBJECT (1)
+sh_bind: STB_LOCAL (0)
+st_shndx: 21
+Section type: SHT_PROGBITS
+Section flags: SHF_WRITE SHF_ALLOC 
+st_size: 0
+st_value: 4325320
+-----------------------------------------------------------------------------------
+Symbol
+name->$x
+section name->.plt
+sh_name->8
+Type determined         [t]
+Type by special section [?]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_LOCAL (0)
+st_shndx: 11
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC SHF_EXECINSTR 
+st_size: 0
+st_value: 4195600
+-----------------------------------------------------------------------------------
+Symbol
+name->__libc_start_main@GLIBC_2.34
+section name->
+sh_name->291
+Type determined         [U]
+Type by special section [?]
+sh_type: STT_FUNC (2)
+sh_bind: STB_GLOBAL (1)
+st_shndx: 0
+Section type: SHT_NULL
+Section flags: 
+st_size: 0
+st_value: 0
+-----------------------------------------------------------------------------------
+Symbol
+name->_ITM_deregisterTMCloneTable
+section name->
+sh_name->320
+Type determined         [w]
+Type by special section [?]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_WEAK (2)
+st_shndx: 0
+Section type: SHT_NULL
+Section flags: 
+st_size: 0
+st_value: 0
+-----------------------------------------------------------------------------------
+Symbol
+name->data_start
+section name->.data
+sh_name->389
+Type determined         [W]
+Type by special section [d]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_WEAK (2)
+st_shndx: 23
+Section type: SHT_PROGBITS
+Section flags: SHF_WRITE SHF_ALLOC 
+st_size: 0
+st_value: 4325408
+-----------------------------------------------------------------------------------
+Symbol
+name->__bss_start__
+section name->.bss
+sh_name->348
+Type determined         [B]
+Type by special section [B]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_GLOBAL (1)
+st_shndx: 24
+Section type: SHT_NOBITS
+Section flags: SHF_WRITE SHF_ALLOC 
+st_size: 0
+st_value: 4325412
+-----------------------------------------------------------------------------------
+Symbol
+name->_bss_end__
+section name->.bss
+sh_name->376
+Type determined         [B]
+Type by special section [B]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_GLOBAL (1)
+st_shndx: 24
+Section type: SHT_NOBITS
+Section flags: SHF_WRITE SHF_ALLOC 
+st_size: 0
+st_value: 4325416
+-----------------------------------------------------------------------------------
+Symbol
+name->_edata
+section name->.data
+sh_name->362
+Type determined         [D]
+Type by special section [D]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_GLOBAL (1)
+st_shndx: 23
+Section type: SHT_PROGBITS
+Section flags: SHF_WRITE SHF_ALLOC 
+st_size: 0
+st_value: 4325412
+-----------------------------------------------------------------------------------
+Symbol
+name->_fini
+section name->.fini
+sh_name->369
+Type determined         [T]
+Type by special section [?]
+sh_type: STT_FUNC (2)
+sh_bind: STB_GLOBAL (1)
+st_shndx: 13
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC SHF_EXECINSTR 
+st_size: 0
+st_value: 4196044
+-----------------------------------------------------------------------------------
+Symbol
+name->__bss_end__
+section name->.bss
+sh_name->375
+Type determined         [B]
+Type by special section [B]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_GLOBAL (1)
+st_shndx: 24
+Section type: SHT_NOBITS
+Section flags: SHF_WRITE SHF_ALLOC 
+st_size: 0
+st_value: 4325416
+-----------------------------------------------------------------------------------
+Symbol
+name->__data_start
+section name->.data
+sh_name->387
+Type determined         [D]
+Type by special section [D]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_GLOBAL (1)
+st_shndx: 23
+Section type: SHT_PROGBITS
+Section flags: SHF_WRITE SHF_ALLOC 
+st_size: 0
+st_value: 4325408
+-----------------------------------------------------------------------------------
+Symbol
+name->__gmon_start__
+section name->
+sh_name->400
+Type determined         [w]
+Type by special section [?]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_WEAK (2)
+st_shndx: 0
+Section type: SHT_NULL
+Section flags: 
+st_size: 0
+st_value: 0
+-----------------------------------------------------------------------------------
+Symbol
+name->__dso_handle
+section name->.rodata
+sh_name->415
+Type determined         [R]
+Type by special section [R]
+sh_type: STT_OBJECT (1)
+sh_bind: STB_GLOBAL (1)
+st_shndx: 14
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC 
+st_size: 0
+st_value: 4196080
+-----------------------------------------------------------------------------------
+Symbol
+name->abort@GLIBC_2.17
+section name->
+sh_name->428
+Type determined         [U]
+Type by special section [?]
+sh_type: STT_FUNC (2)
+sh_bind: STB_GLOBAL (1)
+st_shndx: 0
+Section type: SHT_NULL
+Section flags: 
+st_size: 0
+st_value: 0
+-----------------------------------------------------------------------------------
+Symbol
+name->_IO_stdin_used
+section name->.rodata
+sh_name->445
+Type determined         [R]
+Type by special section [R]
+sh_type: STT_OBJECT (1)
+sh_bind: STB_GLOBAL (1)
+st_shndx: 14
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC 
+st_size: 4
+st_value: 4196072
+-----------------------------------------------------------------------------------
+Symbol
+name->puts@GLIBC_2.17
+section name->
+sh_name->460
+Type determined         [U]
+Type by special section [?]
+sh_type: STT_FUNC (2)
+sh_bind: STB_GLOBAL (1)
+st_shndx: 0
+Section type: SHT_NULL
+Section flags: 
+st_size: 0
+st_value: 0
+-----------------------------------------------------------------------------------
+Symbol
+name->_end
+section name->.bss
+sh_name->476
+Type determined         [B]
+Type by special section [B]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_GLOBAL (1)
+st_shndx: 24
+Section type: SHT_NOBITS
+Section flags: SHF_WRITE SHF_ALLOC 
+st_size: 0
+st_value: 4325416
+-----------------------------------------------------------------------------------
+Symbol
+name->_dl_relocate_static_pie
+section name->.text
+sh_name->481
+Type determined         [T]
+Type by special section [T]
+sh_type: STT_FUNC (2)
+sh_bind: STB_GLOBAL (1)
+st_shndx: 12
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC SHF_EXECINSTR 
+st_size: 24
+st_value: 4195776
+-----------------------------------------------------------------------------------
+Symbol
+name->_start
+section name->.text
+sh_name->393
+Type determined         [T]
+Type by special section [T]
+sh_type: STT_FUNC (2)
+sh_bind: STB_GLOBAL (1)
+st_shndx: 12
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC SHF_EXECINSTR 
+st_size: 60
+st_value: 4195712
+-----------------------------------------------------------------------------------
+Symbol
+name->__end__
+section name->.bss
+sh_name->505
+Type determined         [B]
+Type by special section [B]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_GLOBAL (1)
+st_shndx: 24
+Section type: SHT_NOBITS
+Section flags: SHF_WRITE SHF_ALLOC 
+st_size: 0
+st_value: 4325416
+-----------------------------------------------------------------------------------
+Symbol
+name->__bss_start
+section name->.bss
+sh_name->513
+Type determined         [B]
+Type by special section [B]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_GLOBAL (1)
+st_shndx: 24
+Section type: SHT_NOBITS
+Section flags: SHF_WRITE SHF_ALLOC 
+st_size: 0
+st_value: 4325412
+-----------------------------------------------------------------------------------
+Symbol
+name->main
+section name->.text
+sh_name->18
+Type determined         [T]
+Type by special section [T]
+sh_type: STT_FUNC (2)
+sh_bind: STB_GLOBAL (1)
+st_shndx: 12
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC SHF_EXECINSTR 
+st_size: 32
+st_value: 4196012
+-----------------------------------------------------------------------------------
+Symbol
+name->__TMC_END__
+section name->.data
+sh_name->525
+Type determined         [D]
+Type by special section [D]
+sh_type: STT_OBJECT (1)
+sh_bind: STB_GLOBAL (1)
+st_shndx: 23
+Section type: SHT_PROGBITS
+Section flags: SHF_WRITE SHF_ALLOC 
+st_size: 0
+st_value: 4325416
+-----------------------------------------------------------------------------------
+Symbol
+name->_ITM_registerTMCloneTable
+section name->
+sh_name->537
+Type determined         [w]
+Type by special section [?]
+sh_type: STT_NOTYPE (0)
+sh_bind: STB_WEAK (2)
+st_shndx: 0
+Section type: SHT_NULL
+Section flags: 
+st_size: 0
+st_value: 0
+-----------------------------------------------------------------------------------
+Symbol
+name->_init
+section name->.init
+sh_name->563
+Type determined         [T]
+Type by special section [?]
+sh_type: STT_FUNC (2)
+sh_bind: STB_GLOBAL (1)
+st_shndx: 10
+Section type: SHT_PROGBITS
+Section flags: SHF_ALLOC SHF_EXECINSTR 
+st_size: 0
+st_value: 4195560
+-----------------------------------------------------------------------------------
+Simbolo porcesados

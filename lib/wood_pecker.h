@@ -20,7 +20,10 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include <stdio.h>
-// #include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+
 // #include <stdlib.h>
 // #include <strings.h>
 // #include "../libft/libft.h"
@@ -52,6 +55,10 @@ typedef struct elf64_manager{
     const char *sh_strtab;
 } elf64_manager;
 
+
+int	ft_nm(char *filename, int fd);
+
+
 // //FLAG STRUCT
 // typedef struct active_flags{                   
 //     int a;
@@ -62,12 +69,12 @@ typedef struct elf64_manager{
 // } active_flags;
 
 
-// //BASE FUNCTIONS
-// int	ft_nm			(char *filename, int fd, active_flags flags, int mc);
-// int	analisis_ELF64	(void * _map, active_flags flags);
-// int	analisis_ELF32	(void * _map, active_flags flags);
-// char get_type_sym64(Elf64_Sym *sym, elf64_manager * org);
-// char get_type_sym_special_sections_64(Elf64_Sym *sym, elf64_manager * org);
+//BASE FUNCTIONS
+int	ft_nm			(char *filename, int fd);
+int	analisis_ELF64	(void * _map);
+int	analisis_ELF32	(void * _map);
+char get_type_sym64(Elf64_Sym *sym, elf64_manager * org);
+char get_type_sym_special_sections_64(Elf64_Sym *sym, elf64_manager * org);
 
 // //SORTING
 // void	bubble_sort_sym64(elf64_manager * org, active_flags flags);
@@ -75,7 +82,7 @@ typedef struct elf64_manager{
 
 // //DEBUG
 // int	debug_type_file	(Elf64_Half type );
-// int	debug_sym64		(Elf64_Sym *sym ,elf64_manager * org);
+int	debug_sym64		(Elf64_Sym *sym ,elf64_manager * org);
 // int	debug_shdr64	(Elf64_Shdr *shdr,elf64_manager * org);
 // int	debug_sym32		(Elf32_Sym *sym ,elf32_manager * org);
 // int	debug_shdr32	(Elf32_Shdr *shdr,elf32_manager * org);
