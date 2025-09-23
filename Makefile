@@ -8,7 +8,8 @@ RESET = "\033[1;0m"
 # RESOURCES #
 SRCS =	srcs/main.c \
 		srcs/elf.c \
-		srcs/debug.c
+		srcs/debug.c \
+		srcs/huffman.c
 
 # FLAGS #
 OBJS_DIR = objets
@@ -20,7 +21,7 @@ LIBFT_A = libft/libft.a
 
 CC = gcc
 
-CFLAGS = -std=c99   -Wall -Werror -Wextra
+CFLAGS = -std=c99   -Wall -Wextra -fsanitize=address #-Werror
 
 # Instructions #
 all: $(NAME)

@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WOOD_PECKER_H
-# define WOOD_PECKER_H
-#endif
+#pragma once
 
 #include <elf.h>
 #include <fcntl.h>
@@ -24,6 +22,7 @@
 #include <ctype.h>
 #include <string.h>
 
+#include "huffman.h"
 // #include <stdlib.h>
 // #include <strings.h>
 // #include "../libft/libft.h"
@@ -47,12 +46,12 @@
 
 //MANAGERS 32/64 Bits
 typedef struct elf64_manager{                   
-    int num_symbols;
-    Elf64_Sym *symbols;
-    Elf64_Ehdr *elf_header;
-    Elf64_Shdr *shdr;
-    const char *sym_strtab;
-    const char *sh_strtab;
+	int num_symbols;
+	Elf64_Sym *symbols;
+	Elf64_Ehdr *elf_header;
+	Elf64_Shdr *shdr;
+	const char *sym_strtab;
+	const char *sh_strtab;
 } elf64_manager;
 
 
@@ -86,3 +85,4 @@ int	debug_sym64		(Elf64_Sym *sym ,elf64_manager * org);
 // int	debug_shdr64	(Elf64_Shdr *shdr,elf64_manager * org);
 // int	debug_sym32		(Elf32_Sym *sym ,elf32_manager * org);
 // int	debug_shdr32	(Elf32_Shdr *shdr,elf32_manager * org);
+int encode(int fd);
