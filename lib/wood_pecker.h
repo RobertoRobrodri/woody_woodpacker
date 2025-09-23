@@ -23,10 +23,10 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
+#include "../libft/lib/libft.h"
 
 // #include <stdlib.h>
 // #include <strings.h>
-// #include "../libft/libft.h"
 
 #ifndef DEBUG
 # define DEBUG 1
@@ -86,3 +86,8 @@ int	debug_sym64		(Elf64_Sym *sym ,elf64_manager * org);
 // int	debug_shdr64	(Elf64_Shdr *shdr,elf64_manager * org);
 // int	debug_sym32		(Elf32_Sym *sym ,elf32_manager * org);
 // int	debug_shdr32	(Elf32_Shdr *shdr,elf32_manager * org);
+
+
+//COMPRESSION (HUFFMAN)
+
+int compress_data (char * str );

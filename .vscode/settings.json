@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "wood_pecker.h": "c",
+        "random": "c",
+        "libft.h": "c"
+    }
+}
