@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nm.h                                               :+:      :+:    :+:   */
+/*   wood_pecker.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortiz-d <mortiz-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 12:51:39 by mortiz-d          #+#    #+#             */
-/*   Updated: 2024/12/12 16:57:28 by mortiz-d         ###   ########.fr       */
+/*   Updated: 2025/09/24 13:44:38 by mortiz-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 #include "huffman.h"
 // #include <stdlib.h>
 // #include <strings.h>
-// #include "../libft/libft.h"
+#include "../libft/lib/libft.h"
 
 #ifndef DEBUG
 # define DEBUG 1

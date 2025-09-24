@@ -147,11 +147,31 @@ void print_codes(t_tree_node *n, int depth, int arr[]) {
 	} // leaf node
 }
 
-int huffman(char key[], unsigned int value[], unsigned int len) {
+int huffman(char *str) {
+
+	// char key[], unsigned int value[], unsigned int len
+	
+	t_list *list;
+	t_list *aux;
+    list = NULL;
+    for (int i = 0; i < ft_strlen(str);i++)
+    {
+        list = ft_count_huffman_character(list,str[i]);
+    }
+    // ft_visualize_huffman_list(list);
+	
 	t_heap *heap = create_min_heap(MAX_MIN_HEAP);
-	for (unsigned int i = 0; i < len; i++) {
-		insert_heap(heap, create_new_node(key[i], value[i]));
+	
+	aux = list;
+	while (aux)
+	{
+		insert_heap(heap, create_new_node(((t_huffman_count_list *)aux->content)->c, ((t_huffman_count_list *)aux->content)->count));
+		aux = aux->next;
 	}
+	
+	fd_huffman_destroy_list(list);
+
+
 	print_heap(heap);
 	t_tree_node *tree = build_huffman_tree(heap);
 	print_tree(tree, 0);

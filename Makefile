@@ -27,25 +27,24 @@ CFLAGS = -std=c99   -Wall -Wextra #-fsanitize=address #-Werror
 all: $(NAME)
 
 $(NAME): $(OBJS)
-# @make -C ./libft
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) 
-#$(LIBFT_A)
-	$(BLUE) NM set Up $(RESET)
+	@make -C ./libft
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT_A)
+	$(BLUE) $(NAME) set Up $(RESET)
 
 $(OBJS_DIR)/%.o: srcs/%.c
 #Creamos las carpetas necesarias para compilar
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -g -c $<  -o $@
-	$(CYAN) NM Object Compiled $< $(RESET)
+	$(CYAN) $(NAME) Object Compiled $< $(RESET)
 
 clean:
 # @make fclean -s -C./libft
 	@rm -rf $(OBJS_DIR)
-	$(PURPLE) Cleaned NM Objects $(RESET)
+	$(PURPLE) Cleaned $(NAME) Objects $(RESET)
 
 fclean: clean
 	rm -rf $(NAME)
-	$(PURPLE) Cleaned NM Executable $(RESET)	
+	$(PURPLE) Cleaned $(NAME) Executable $(RESET)	
 
 re: fclean all
 
