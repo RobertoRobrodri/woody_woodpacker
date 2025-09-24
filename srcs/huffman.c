@@ -1,9 +1,30 @@
 #include "../lib/wood_pecker.h"
 
-void print_heap(t_heap *h) {
+static void print_heap(t_heap *h) {
 	for (int i = 0; i < h->size; i++) {
 		printf("%d\n", h->nodes[i]->freq);
 	}
+}
+
+//helper function that I copied, sorry Morti
+static void print_tree(t_tree_node *root, int depth) {
+	if (root == NULL)
+		return;
+
+	// Print right subtree
+	print_tree(root->right, depth + 1);
+
+	// Indent based on depth
+	for (int i = 0; i < depth; i++)
+		printf("    ");  // 4 spaces per level
+
+	if (root->c != '\0')  // leaf node (character)
+		printf("'%c' (%d)\n", root->c, root->freq);
+	else                  // internal node
+		printf("• (%d)\n", root->freq);
+
+	// Print left subtree
+	print_tree(root->left, depth + 1);
 }
 
 t_heap *create_min_heap(unsigned int capacity) {
@@ -37,8 +58,8 @@ t_tree_node *create_new_node(char c, unsigned int freq) {
 
 static void swap_nodes(t_tree_node **a, t_tree_node **b) {
 	t_tree_node *tmp = *a;
-    *a = *b;
-    *b = tmp;
+	*a = *b;
+	*b = tmp;
 }
 
 static void rearrange_heap(t_heap *h, unsigned int index) {
@@ -59,14 +80,14 @@ static void min_heapify(t_heap *h, unsigned int index) {
 	unsigned int smallest = index;
 
 	if (left < h->size && h->nodes[left]->freq < h->nodes[smallest]->freq)
-        smallest = left;
+		smallest = left;
 
-    if (right < h->size && h->nodes[right]->freq < h->nodes[smallest]->freq)
-        smallest = right;
+	if (right < h->size && h->nodes[right]->freq < h->nodes[smallest]->freq)
+		smallest = right;
 
-    if (smallest != index) {
-        swap_nodes(&h->nodes[index], &h->nodes[smallest]);
-        min_heapify(h, smallest);
+	if (smallest != index) {
+		swap_nodes(&h->nodes[index], &h->nodes[smallest]);
+		min_heapify(h, smallest);
 	}
 }
 
@@ -90,19 +111,64 @@ void insert_heap(t_heap *h, t_tree_node *node) {
 	}
 }
 
+// https://www.programiz.com/dsa/huffman-coding
+t_tree_node *build_huffman_tree(t_heap *h) {
+	while (h->size > 1) {
+		/* Create an empty node z. Assign the minimum frequency to the left child of z
+		and assign the second minimum frequency to the right child of z.
+		Set the value of the z as the sum of the above two minimum frequencies.*/
+		t_tree_node *left = extract_min(h);
+		t_tree_node *right = extract_min(h);
+		t_tree_node *new = create_new_node('\0', left->freq + right->freq);
+		
+		new->left = left;
+		new->right = right;
+		// Insert node z into the tree and repeat
+		insert_heap(h, new);
+	}
+	return extract_min(h);
+}
+
+void print_codes(t_tree_node *n, int depth, int arr[]) {
+	if (n->left) {
+		arr[depth] = 0;
+		print_codes(n->left, depth + 1, arr);
+	}
+	if (n->right) {
+		arr[depth] = 1;
+		print_codes(n->right, depth + 1, arr);
+	}
+	if (n->c != '\0') {
+		printf("   %c   |", n->c);
+		for (int i = 0; i < depth; i++) {
+			printf("%d", arr[i]);
+		}
+		printf("\n");
+	} // leaf node
+}
+
 int huffman(char *str) {
 	// printf("Enconding: %s\n", str);
 	t_heap *heap = create_min_heap(50);
-	t_tree_node *leaf_3 = create_new_node('a', 5);
-	t_tree_node *leaf_0 = create_new_node('d', 1);
-	t_tree_node *leaf_1 = create_new_node('c', 2);
-	t_tree_node *leaf_2 = create_new_node('b', 3);
+	t_tree_node *leaf_0 = create_new_node('g', 2);
+	t_tree_node *leaf_1 = create_new_node('e', 4);
+	t_tree_node *leaf_2 = create_new_node('k', 2);
+	t_tree_node *leaf_3 = create_new_node('s', 2);
+	t_tree_node *leaf_4 = create_new_node('f', 1);
+	t_tree_node *leaf_5 = create_new_node('o', 1);
+	t_tree_node *leaf_6 = create_new_node('r', 1);
 	insert_heap(heap, leaf_0);
-	insert_heap(heap, leaf_3);
-	insert_heap(heap, leaf_2);
 	insert_heap(heap, leaf_1);
+	insert_heap(heap, leaf_2);
+	insert_heap(heap, leaf_3);
+	insert_heap(heap, leaf_4);
+	insert_heap(heap, leaf_5);
+	insert_heap(heap, leaf_6);
 	print_heap(heap);
-	extract_min(heap);
-	print_heap(heap);
+	t_tree_node *tree = build_huffman_tree(heap);
+	print_tree(tree, 0);
+	printf("\n Printing codes\n");
+	int arr[50];
+	print_codes(tree, 0, arr);
 	return 0;
 }

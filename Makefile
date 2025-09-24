@@ -21,7 +21,7 @@ LIBFT_A = libft/libft.a
 
 CC = gcc
 
-CFLAGS = -std=c99   -Wall -Wextra -fsanitize=address #-Werror
+CFLAGS = -std=c99   -Wall -Wextra #-fsanitize=address #-Werror
 
 # Instructions #
 all: $(NAME)
