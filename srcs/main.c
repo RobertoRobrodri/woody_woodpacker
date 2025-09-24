@@ -15,7 +15,8 @@ int	main(int argc, char **argv)
 	// fd = open(argv[1], O_RDONLY);
 	// // ft_nm(argv[1],fd);//, flags, multiple_commands);
 	// close(fd);
-
-	huffman("aaaaabbbccd");
+	char keys[] = {'a', 'b', 'c'};
+	unsigned int values[] = {1, 2, 3};
+	huffman(keys, values, sizeof(keys));
     return 0 ;
 }

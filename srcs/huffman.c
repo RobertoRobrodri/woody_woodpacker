@@ -147,28 +147,17 @@ void print_codes(t_tree_node *n, int depth, int arr[]) {
 	} // leaf node
 }
 
-int huffman(char *str) {
-	// printf("Enconding: %s\n", str);
-	t_heap *heap = create_min_heap(50);
-	t_tree_node *leaf_0 = create_new_node('g', 2);
-	t_tree_node *leaf_1 = create_new_node('e', 4);
-	t_tree_node *leaf_2 = create_new_node('k', 2);
-	t_tree_node *leaf_3 = create_new_node('s', 2);
-	t_tree_node *leaf_4 = create_new_node('f', 1);
-	t_tree_node *leaf_5 = create_new_node('o', 1);
-	t_tree_node *leaf_6 = create_new_node('r', 1);
-	insert_heap(heap, leaf_0);
-	insert_heap(heap, leaf_1);
-	insert_heap(heap, leaf_2);
-	insert_heap(heap, leaf_3);
-	insert_heap(heap, leaf_4);
-	insert_heap(heap, leaf_5);
-	insert_heap(heap, leaf_6);
+int huffman(char key[], unsigned int value[], unsigned int len) {
+	t_heap *heap = create_min_heap(MAX_MIN_HEAP);
+	for (unsigned int i = 0; i < len; i++) {
+		insert_heap(heap, create_new_node(key[i], value[i]));
+	}
 	print_heap(heap);
 	t_tree_node *tree = build_huffman_tree(heap);
 	print_tree(tree, 0);
 	printf("\n Printing codes\n");
 	int arr[50];
 	print_codes(tree, 0, arr);
+	free(heap);
 	return 0;
 }
