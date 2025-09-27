@@ -1,5 +1,8 @@
 #pragma once
-#define MAX_MIN_HEAP 50
+#define MAX_MIN_HEAP 	50
+#define ETX 			3 //END OF TEXT
+#define BITS_IN_BYTE 	8
+#define BITS_INTEGER 	(sizeof(int) * BITS_IN_BYTE)
 typedef struct s_tree_node {
 	char c;
 	unsigned int freq;
@@ -12,6 +15,9 @@ typedef struct s_heap {
 	int capacity;
 	t_tree_node **nodes;
 } t_heap;
+
+
+
 
 t_heap *create_min_heap(unsigned int capacity);
 t_tree_node *create_new_node(char c, unsigned int freq);

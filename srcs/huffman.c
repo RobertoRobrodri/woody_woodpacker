@@ -1,10 +1,10 @@
 #include "../lib/wood_pecker.h"
 
-static void print_heap(t_heap *h) {
-	for (int i = 0; i < h->size; i++) {
-		printf("%d\n", h->nodes[i]->freq);
-	}
-}
+// static void print_heap(t_heap *h) {
+// 	for (int i = 0; i < h->size; i++) {
+// 		printf("%d\n", h->nodes[i]->freq);
+// 	}
+// }
 
 //helper function that I copied, sorry Morti
 static void print_tree(t_tree_node *root, int depth) {
@@ -144,22 +144,231 @@ void print_codes(t_tree_node *n, int depth, int arr[]) {
 			printf("%d", arr[i]);
 		}
 		printf("\n");
-	} // leaf node
+	}
 }
 
-int huffman(char *str) {
 
-	// char key[], unsigned int value[], unsigned int len
+void add_codes(t_list *lst,t_tree_node *n, int depth, int arr[]) {
 	
+	t_list *aux;
+	
+	if (n->left) {
+		arr[depth] = 0;
+		add_codes(lst,n->left, depth + 1, arr);
+	}
+	if (n->right) {
+		arr[depth] = 1;
+		add_codes(lst,n->right, depth + 1, arr);
+	}
+	if (n->c != '\0') {
+
+		aux = ft_huffman_find(lst, n->c);
+		// printf("   %c   |", n->c);
+		for (int i = 0; i < depth; i++) {
+			
+			((t_huffman_count_list *)aux->content)->code[i] = arr[i] + 48;
+			// printf("%d", arr[i]);
+		}
+		// printf("\n");
+	}
+}
+
+void engrave_code (t_list * lst,int *txt,int *bitposition, char c)
+{
+	t_list * aux;
+	size_t pos_bit;
+	size_t pos;
+	size_t i;
+	
+	i = 0;
+	aux = ft_huffman_find(lst,c);
+	pos = (size_t) (*bitposition / BITS_INTEGER);
+	pos_bit = (BITS_INTEGER - 1) - (size_t)(*bitposition % BITS_INTEGER);
+	if (aux)
+	{
+		while (((t_huffman_count_list *)aux->content)->code[i])
+		{
+			if (((t_huffman_count_list *)aux->content)->code[i] == '1')
+				txt[pos] |= (1 << pos_bit);
+			
+			if (pos_bit == 0)
+			{
+				pos_bit = BITS_INTEGER;
+				pos++;
+			}
+			i++;
+			pos_bit--;
+		}
+		*bitposition += i;
+	}
+}
+
+int * parse_test(char *str,t_list *lst)
+{	
+	int *txt;
+	int bit_pos;
+	int bit_count;
+	int len;
+	size_t text_size;
+	
+	bit_count = ft_huffman_calculate_bitsize(lst);
+	if (bit_count % BITS_INTEGER != 0)
+		text_size = bit_count / BITS_INTEGER + 1;
+	else
+		text_size = bit_count / BITS_INTEGER;
+
+	txt = calloc(text_size,sizeof(int));
+	txt[0] = bit_count;
+	printf("Tamaños en bits %d \n",bit_count);
+	len = ft_strlen(str);
+	bit_pos = BITS_INTEGER;
+	for (int i = 0 ; i < len ; i++)
+		engrave_code(lst,txt,&bit_pos,str[i]);
+
+	return txt;
+}
+
+
+void read_code(int *txt)
+{
+    size_t pos ,pos_bit;
+	size_t bit_count, text_size;
+	// size_t bit_test_size = text_size * BITS_INTEGER;
+
+	bit_count = (size_t)txt[0];
+	if (bit_count % BITS_INTEGER != 0)
+		text_size = bit_count / BITS_INTEGER + 1;
+	else
+		text_size = bit_count / BITS_INTEGER;
+	text_size+=1;
+
+	pos_bit = BITS_INTEGER - 1;
+	pos = 1;
+    while (pos < text_size)
+    {
+		if ((txt[pos] & (1 << pos_bit)) == 0)
+			printf("0");
+		else
+			printf("1");
+		
+		if (pos_bit == 0)
+		{
+			pos++;
+			pos_bit = BITS_INTEGER;
+		}
+		pos_bit--;
+		bit_count--;
+		if (bit_count == 0)
+			break;
+	    }
+    printf("\n");
+}
+
+
+
+void unparse_code(int *txt,t_tree_node *tree )
+{
+    size_t pos ,pos_bit;
+	size_t bit_count ,text_size;
+	t_tree_node *aux;
+
+	bit_count = (size_t)txt[0];
+	if (bit_count % BITS_INTEGER != 0)
+		text_size = bit_count / BITS_INTEGER + 1;
+	else
+		text_size = bit_count / BITS_INTEGER;
+	text_size+=1;
+
+	pos_bit = BITS_INTEGER - 1;
+	aux = tree;
+	pos = 1;
+    while (pos < text_size)
+    {
+		if ((txt[pos] & (1 << pos_bit)) == 0)
+			aux = aux->left;
+		else
+			aux = aux->right;
+
+		if (aux->c != '\0')
+		{
+			printf("%c",aux->c);
+			aux = tree;
+		}
+		if (pos_bit == 0)
+		{
+			pos++;
+			pos_bit = BITS_INTEGER;
+		}
+		pos_bit--;
+		bit_count--;
+		if (bit_count == 0)
+			break;
+    }
+    printf("\n");
+}
+
+
+int set_truth_table(t_tree_node *tree,char *str, int pos)
+{
+	if (tree->left) {
+		pos = set_truth_table(tree->left,str,pos);
+	}
+	if (tree->right) {
+		pos = set_truth_table(tree->right,str,pos);
+	}
+	if (tree->c != '\0') {
+		str[pos] = tree->c;
+		pos++;
+	}
+	return pos;
+}
+
+char * get_tree_in_char(t_tree_node *tree, t_list *lst)
+{
+	char *aux;
+	size_t size;
+
+	size = ft_lstsize(lst);
+	aux = calloc(size + 1,sizeof(char));
+	set_truth_table(tree,aux,0);
+
+	// for (size_t i = 0;i < size;i++)
+	// {
+	// 	printf("Tabla de la verdad para %d: '%c'\n",i,aux[i]);
+	// }
+
+	return aux;
+}
+
+
+t_heap * get_tree_from_char(char *str)
+{
+	t_heap *heap = create_min_heap(MAX_MIN_HEAP);
+	int		i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		insert_heap(heap, create_new_node(str[i], i));
+		i++;
+	}
+
+	return heap;
+}
+
+
+int huffman(char *str) {
 	t_list *list;
 	t_list *aux;
+	int *txt;
+	char *table;
+	printf("Frase a codificar\n%s\n",str);
     list = NULL;
     for (int i = 0; i < ft_strlen(str);i++)
     {
-        list = ft_count_huffman_character(list,str[i]);
+        list =  ft_huffman_add_character(list, str[i]); //ft_count_huffman_character(list,str[i]);
     }
-    // ft_visualize_huffman_list(list);
-	
+	list =  ft_huffman_add_character(list, ETX);
 	t_heap *heap = create_min_heap(MAX_MIN_HEAP);
 	
 	aux = list;
@@ -168,16 +377,32 @@ int huffman(char *str) {
 		insert_heap(heap, create_new_node(((t_huffman_count_list *)aux->content)->c, ((t_huffman_count_list *)aux->content)->count));
 		aux = aux->next;
 	}
-	
-	fd_huffman_destroy_list(list);
 
-
-	print_heap(heap);
 	t_tree_node *tree = build_huffman_tree(heap);
+	// print_heap(heap);
 	print_tree(tree, 0);
-	printf("\n Printing codes\n");
 	int arr[50];
-	print_codes(tree, 0, arr);
+	add_codes(list,tree, 0, arr);
+
+	// ft_huffman_visualize(list);
+
+	// txt = parse_test(str,list);
+	// printf("Frase codificada , atrevete a leer esto\n");
+	// read_code(txt);
+	// printf("Ahora toca descodificar\n");
+	// unparse_code(txt,tree);
+
+	printf("- - - - - - - - - - - \n");
+
+	table = get_tree_in_char(tree,list);
+
+	t_heap *heap_decode = get_tree_from_char(table);
+	t_tree_node *tree_decode = build_huffman_tree(heap_decode);
+	print_tree(tree_decode, 0);
+
+
+	free(txt);
+	free(heap->nodes);
 	free(heap);
 	return 0;
 }
