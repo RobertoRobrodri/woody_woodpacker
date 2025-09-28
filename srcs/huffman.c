@@ -158,6 +158,7 @@ int huffman(char key[], unsigned int value[], unsigned int len) {
 	printf("\n Printing codes\n");
 	int arr[50];
 	print_codes(tree, 0, arr);
+	free(heap->nodes);
 	free(heap);
 	return 0;
 }
