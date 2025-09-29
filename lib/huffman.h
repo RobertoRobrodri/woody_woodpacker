@@ -3,6 +3,7 @@
 #define ETX 			3 //END OF TEXT
 #define BITS_IN_BYTE 	8
 #define BITS_INTEGER 	(sizeof(int) * BITS_IN_BYTE)
+#define BITS_CHAR 		(sizeof(char) * BITS_IN_BYTE)
 typedef struct s_tree_node {
 	char c;
 	unsigned int freq;
