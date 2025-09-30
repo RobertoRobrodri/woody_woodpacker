@@ -27,4 +27,5 @@ t_tree_node *extract_min(t_heap *h);
 t_tree_node *build_huffman_tree(t_heap *h);
 void print_codes(t_tree_node *n, int depth, int arr[]);
 // int huffman(char key[], unsigned int value[], unsigned int len);
-int huffman(char *str);
+int * huffman(int *txt_size,char *str);
+char * unhuffman(int *txt);

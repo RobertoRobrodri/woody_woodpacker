@@ -245,42 +245,6 @@ void engrave_character (int *txt,int *bitposition, char c){
 	}
 }
 
-int * parse_test(char *str,t_list *lst){	
-	int *txt;
-	int bit_pos;
-	int bit_count;
-	int len;
-	size_t text_size;
-	t_list *aux;
-
-	// Tamaño de la reserva es : Tamaño de la tabla + tabla de la verdad + Tamaño del mensaje + Mensaje encriptado
-	//	                             (1 int)         (1 char + 1 int * x)    (1 int)             (X size in bits)
-	bit_count = ft_huffman_calculate_bitsize(lst) + (BITS_INTEGER * 2) + ((int)ft_huffman_list_count(lst) * ((sizeof(char) + sizeof(int)) * BITS_IN_BYTE )) ;
-	if (bit_count % BITS_INTEGER != 0)
-		text_size = bit_count / BITS_INTEGER + 1;
-	else
-		text_size = bit_count / BITS_INTEGER;
-
-	txt = calloc(text_size,sizeof(int));
-	
-	
-	
-	bit_pos = 0;
-	engrave_number(txt,&bit_pos,(int)ft_huffman_list_count(lst));
-	aux = lst;
-	while (aux)
-	{
-		engrave_character(txt,&bit_pos,((t_huffman_count_list *)aux->content)->c);
-		engrave_number(txt,&bit_pos,((t_huffman_count_list *)aux->content)->count);
-		aux = aux->next;
-	}
-	engrave_number(txt,&bit_pos,(int)ft_strlen(str));
-
-	len = ft_strlen(str);
-	for (int i = 0 ; i < len ; i++)
-		engrave_code(lst,txt,&bit_pos,str[i]);
-	return txt;
-}
 
 int read_number (int *txt,int *bitposition){
 	int number;
@@ -365,13 +329,16 @@ char read_code_2(int *txt, int *bitposition, t_tree_node *tree ){
 	return c;
 }
 
-void unparse_test(int *txt){
+char * unhuffman(int *txt){
     int pos_bit, table_size;
 	t_heap *heap;
 	t_tree_node *tree;
-
+	char *str;
 	int test_i;
 	char test_c;
+
+	if ((void *)txt == NULL)
+		return "";
 
 	pos_bit = 0;
 	table_size = read_number(txt,&pos_bit);
@@ -386,52 +353,120 @@ void unparse_test(int *txt){
 	tree = build_huffman_tree(heap);
 
 	table_size = read_number(txt,&pos_bit);
+	str = calloc (table_size + 1, sizeof(char));
 	for (int i = 0; i < table_size; i++)
 	{
 		test_c = read_code_2(txt,&pos_bit,tree);
-		printf( "%c",test_c);
+		str[i] = test_c;
 	}
+	free(heap->nodes);
+	free(heap);
+	return (str);
 }
 
-int huffman(char *str) {
-	t_list *list;
-	t_list *aux;
-	int *txt;
-	// char *table;
-	printf("Frase a codificar\n%s\n",str);
-    list = NULL;
+
+int *huffman(int *txt_size, char *str){	
+	int *txt, bit_pos, bit_count, len;
+	int arr[50];
+	t_list *aux, *lst;
+	t_heap *heap;
+	t_tree_node *tree;
+
+	//We establish the truth table for the code
+    lst = NULL;
+	len = ft_strlen(str);
+
+	if (len == 0)
+		return NULL;
+
     for (int i = 0; i < ft_strlen(str);i++)
-    {
-        list =  ft_huffman_add_character(list, str[i]); //ft_count_huffman_character(list,str[i]);
-    }
-	// list =  ft_huffman_add_character(list, ETX);
-	t_heap *heap = create_min_heap(MAX_MIN_HEAP);
-	
-	aux = list;
+	{
+        lst =  ft_huffman_add_character(lst, str[i]); 
+	}
+	heap = create_min_heap(MAX_MIN_HEAP);
+	aux = lst;
 	while (aux)
 	{
 		insert_heap(heap, create_new_node(((t_huffman_count_list *)aux->content)->c, ((t_huffman_count_list *)aux->content)->count));
 		aux = aux->next;
 	}
-
-	t_tree_node *tree = build_huffman_tree(heap);
+	tree = build_huffman_tree(heap);
 	// print_heap(heap);
-	// print_tree(tree, 0);
-	int arr[50];
-	add_codes(list,tree, 0, arr);
+	// print_tree(tree, 0);	
+	add_codes(lst,tree, 0, arr);
+
+	// Tamaño de la reserva es : Tamaño de la tabla + tabla de la verdad + Tamaño del mensaje + Mensaje encriptado
+	//	                             (1 int)         (1 char + 1 int * x)    (1 int)             (X size in bits)
+	bit_count = ft_huffman_calculate_bitsize(lst) + (BITS_INTEGER * 2) + ((int)ft_huffman_list_count(lst) * ((sizeof(char) + sizeof(int)) * BITS_IN_BYTE )) ;
+	if (bit_count % BITS_INTEGER != 0)
+		*txt_size = bit_count / BITS_INTEGER + 1;
+	else
+		*txt_size = bit_count / BITS_INTEGER;
+
+	txt = calloc(*txt_size,sizeof(int));
+	
+	
+	//We start engraving the code into its binary form
+	bit_pos = 0;
+	engrave_number(txt,&bit_pos,(int)ft_huffman_list_count(lst)); //first we engrave the size of the table (char + int)
+	aux = lst;
+	while (aux)
+	{
+		engrave_character(txt,&bit_pos,((t_huffman_count_list *)aux->content)->c);
+		engrave_number(txt,&bit_pos,((t_huffman_count_list *)aux->content)->count);
+		aux = aux->next;
+	}
+	engrave_number(txt,&bit_pos,(int)ft_strlen(str)); //then we engrave the size of code len (normal size)
+	for (int i = 0 ; i < len ; i++)
+		engrave_code(lst,txt,&bit_pos,str[i]);
+
+	fd_huffman_destroy_list(lst);
+	free(heap->nodes);
+	free(heap);
+	printf("\ndevolvemos %d\n",*txt_size);
+	printf("\ndevolvemos %p\n",txt);
+	return txt;
+}
+
+
+// int huffman(char *str) {
+// 	// t_list *list;
+// 	// t_list *aux;
+// 	int *txt;
+	// // char *table;
+	// printf("Frase a codificar\n%s\n",str);
+    // list = NULL;
+    // for (int i = 0; i < ft_strlen(str);i++)
+    // {
+    //     list =  ft_huffman_add_character(list, str[i]); //ft_count_huffman_character(list,str[i]);
+    // }
+	// // list =  ft_huffman_add_character(list, ETX);
+	// t_heap *heap = create_min_heap(MAX_MIN_HEAP);
+	
+	// aux = list;
+	// while (aux)
+	// {
+	// 	insert_heap(heap, create_new_node(((t_huffman_count_list *)aux->content)->c, ((t_huffman_count_list *)aux->content)->count));
+	// 	aux = aux->next;
+	// }
+
+	// t_tree_node *tree = build_huffman_tree(heap);
+	// // print_heap(heap);
+	// // print_tree(tree, 0);
+	// int arr[50];
+	// add_codes(list,tree, 0, arr);
 
 	// ft_huffman_visualize(list);
 
-	txt = parse_test(str,list);
-	printf("- - - - - - - - - - - \n");
-	unparse_test(txt);
+// 	txt = parse_test(str);
+// 	printf("- - - - - - - - - - - \n");
+// 	// unparse_test(txt);
 
-	printf("\n- - - - - - - - - - - \n");
+// 	printf("\n- - - - - - - - - - - \n");
 
 	
 
-	free(txt);
-	free(heap->nodes);
-	free(heap);
-	return 0;
-}
+// 	free(txt);
+	
+// 	return 0;
+// }
